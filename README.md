@@ -26,7 +26,7 @@ Drag mode same_level:
 #### Dependencies
 ```groovy
 dependencies {
-    compile 'com.codegames.swipereveallayout:swipe-reveal-layout:1.4.1'
+    compile 'com.codegames.swipereveallayout:swipe-reveal-layout:1.4.2'
 }
 ```
 
