@@ -133,6 +133,14 @@ public class SwipeRevealLayout extends ViewGroup {
         void onDragStateChanged(int state);
     }
 
+    public int getMode() {
+        return this.mMode;
+    }
+
+    public void setMode(int mode) {
+        this.mMode = mode;
+    }
+
     /**
      * Listener for monitoring events about swipe layout.
      */
@@ -216,7 +224,10 @@ public class SwipeRevealLayout extends ViewGroup {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+        setupViews();
+    }
 
+    public void setupViews() {
         // get views
         if (getChildCount() >= 2) {
             mSecondaryView = getChildAt(0);
