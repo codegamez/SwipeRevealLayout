@@ -1,4 +1,4 @@
-package com.chauthai.swipereveallayoutdemo;
+package com.codegames.swipereveallayoutdemo;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,19 +10,19 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chauthai.swipereveallayout.SwipeRevealLayout;
-import com.chauthai.swipereveallayout.ViewBinderHelper;
+import com.codegames.swipereveallayout.SwipeRevealLayout;
+import com.codegames.swipereveallayout.ViewBinderHelper;
 
 import java.util.List;
 
 /**
  * Created by Chau Thai on 4/12/16.
  */
-public class ListAdapter extends ArrayAdapter<String> {
+public class GridAdapter extends ArrayAdapter<String> {
     private final LayoutInflater mInflater;
     private final ViewBinderHelper binderHelper;
 
-    public ListAdapter(Context context, List<String> objects) {
+    public GridAdapter(Context context, List<String> objects) {
         super(context, R.layout.row_list, objects);
         mInflater = LayoutInflater.from(context);
         binderHelper = new ViewBinderHelper();
@@ -36,7 +36,7 @@ public class ListAdapter extends ArrayAdapter<String> {
         ViewHolder holder;
 
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.row_list, parent, false);
+            convertView = mInflater.inflate(R.layout.grid_item, parent, false);
 
             holder = new ViewHolder();
             holder.swipeLayout = (SwipeRevealLayout) convertView.findViewById(R.id.swipe_layout);
@@ -65,7 +65,7 @@ public class ListAdapter extends ArrayAdapter<String> {
                 public void onClick(View view) {
                     String displayText = "" + item + " clicked";
                     Toast.makeText(getContext(), displayText, Toast.LENGTH_SHORT).show();
-                    Log.d("ListAdapter", displayText);
+                    Log.d("GridAdapter", displayText);
                 }
             });
         }

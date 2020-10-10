@@ -1,27 +1,28 @@
-package com.chauthai.swipereveallayoutdemo;
+package com.codegames.swipereveallayoutdemo;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
-import android.widget.GridView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Chau Thai on 4/12/16.
+ * Created by Chau Thai on 4/8/16.
  */
-public class GridActivity extends AppCompatActivity {
-    private GridAdapter adapter;
+public class RecyclerDemoActivity extends AppCompatActivity {
+    private RecyclerView recyclerView;
+    private RecyclerAdapter adapter;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grid);
+        setContentView(R.layout.activity_recycler);
         setupActionBar();
-        setupGrid();
+        setupList();
     }
 
     @Override
@@ -46,10 +47,12 @@ public class GridActivity extends AppCompatActivity {
         }
     }
 
-    private void setupGrid() {
-        GridView gridView = (GridView) findViewById(R.id.gridview);
-        adapter = new GridAdapter(this, createList(20));
-        gridView.setAdapter(adapter);
+    private void setupList() {
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        adapter = new RecyclerAdapter(this, createList(20));
+        recyclerView.setAdapter(adapter);
     }
 
     private List<String> createList(int n) {

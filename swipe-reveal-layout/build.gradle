@@ -3,12 +3,12 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 24
+        targetSdkVersion 29
         versionCode 8
         versionName "1.4.1"
     }
@@ -21,28 +21,28 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:24.2.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
 
 ext {
-    bintrayRepo = 'maven'
+    bintrayRepo = 'swipe-reveal-layout'
     bintrayName = 'swipe-reveal-layout'
 
-    publishedGroupId = 'com.chauthai.swipereveallayout'
+    publishedGroupId = 'com.codegames.swipereveallayout'
     libraryName = 'SwipeRevealLayout'
     artifact = 'swipe-reveal-layout'
 
     libraryDescription = 'Easy, fast and powerful Swipe Layout for Android'
 
-    siteUrl = 'https://github.com/chthai64/SwipeRevealLayout'
-    gitUrl = 'https://github.com/chthai64/SwipeRevealLayout.git'
+    siteUrl = 'https://github.com/shahab-yousefi/SwipeRevealLayout'
+    gitUrl = 'https://github.com/shahab-yousefi/SwipeRevealLayout.git'
 
-    libraryVersion = '1.4.1'
+    libraryVersion = android.defaultConfig.versionName
 
-    developerId = 'chthai64'
-    developerName = 'Chau Thai'
-    developerEmail = 'chthai64@gmail.com'
+    developerId = 'codegames'
+    developerName = 'Shahab Yousefi'
+    developerEmail = 'shahab_yousefi@live.com'
 
     licenseName = 'The MIT License (MIT)'
     licenseUrl = 'https://opensource.org/licenses/MIT'

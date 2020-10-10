@@ -1,4 +1,4 @@
-## SwipeRevealLayout
+# SwipeRevealLayout
 A layout that you can swipe/slide to show another layout.
 
 ### Demo
@@ -26,13 +26,13 @@ Drag mode same_level:
 #### Dependencies
 ```groovy
 dependencies {
-    compile 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+    compile 'com.codegames.swipereveallayout:swipe-reveal-layout:1.4.1'
 }
 ```
 
 #### Layout file
 ```xml
-<com.chauthai.swipereveallayout.SwipeRevealLayout
+<com.codegames.swipereveallayout.SwipeRevealLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:mode="same_level"
@@ -48,7 +48,7 @@ dependencies {
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
             
-</com.chauthai.swipereveallayout.SwipeRevealLayout>
+</com.codegames.swipereveallayout.SwipeRevealLayout>
 ```
 ```app:mode``` can be ```normal``` or ```same_level```
 

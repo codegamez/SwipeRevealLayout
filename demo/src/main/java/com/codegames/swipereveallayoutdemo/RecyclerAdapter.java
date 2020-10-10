@@ -1,8 +1,10 @@
-package com.chauthai.swipereveallayoutdemo;
+package com.codegames.swipereveallayoutdemo;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +12,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chauthai.swipereveallayout.SwipeRevealLayout;
-import com.chauthai.swipereveallayout.ViewBinderHelper;
+import com.codegames.swipereveallayout.SwipeRevealLayout;
+import com.codegames.swipereveallayout.ViewBinderHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by Chau Thai on 4/8/16.
@@ -66,7 +69,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
     /**
      * Only if you need to restore open/close state when the orientation is changed.
-     * Call this method in {@link android.app.Activity#onSaveInstanceState(Bundle)}
+     * Call this method in {@link android.app.Activity#onSaveInstanceState(Bundle, PersistableBundle)}
      */
     public void saveStates(Bundle outState) {
         binderHelper.saveStates(outState);
@@ -74,7 +77,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
 
     /**
      * Only if you need to restore open/close state when the orientation is changed.
-     * Call this method in {@link android.app.Activity#onRestoreInstanceState(Bundle)}
+     * Call this method in {@link android.app.Activity#onRestoreInstanceState(Bundle, PersistableBundle)}
      */
     public void restoreStates(Bundle inState) {
         binderHelper.restoreStates(inState);
