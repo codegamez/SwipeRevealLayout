@@ -399,20 +399,15 @@ public class SwipeRevealLayout extends ViewGroup {
             desiredHeight = Math.max(child.getMeasuredHeight(), desiredHeight);
         }
 
-        // taking accounts of padding
-        desiredWidth += getPaddingLeft() + getPaddingRight();
-        desiredHeight += getPaddingTop() + getPaddingBottom();
-
         // adjust desired width
         if (widthMode == MeasureSpec.EXACTLY) {
             desiredWidth = measuredWidth;
         } else {
+            if (widthMode == MeasureSpec.AT_MOST) {
+                desiredWidth = Math.min(desiredWidth, measuredWidth);
+            }
             if (params.width == LayoutParams.MATCH_PARENT) {
                 desiredWidth = measuredWidth;
-            }
-
-            if (widthMode == MeasureSpec.AT_MOST) {
-                desiredWidth = (desiredWidth > measuredWidth)? measuredWidth : desiredWidth;
             }
         }
 
@@ -425,9 +420,13 @@ public class SwipeRevealLayout extends ViewGroup {
             }
 
             if (heightMode == MeasureSpec.AT_MOST) {
-                desiredHeight = (desiredHeight > measuredHeight)? measuredHeight : desiredHeight;
+                desiredHeight = Math.min(desiredHeight, measuredHeight);
             }
         }
+
+        // taking accounts of padding
+        desiredWidth += getPaddingLeft() + getPaddingRight();
+        desiredHeight += getPaddingTop() + getPaddingBottom();
 
         setMeasuredDimension(desiredWidth, desiredHeight);
     }
