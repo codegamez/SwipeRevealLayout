@@ -27,15 +27,13 @@ Drag mode same_level:
 
 ```groovy
 repositories {
-    maven {
-         url 'https://dl.bintray.com/codegames/swipe-reveal-layout'
-    }
+    maven { url 'https://jitpack.io' }
 }
 ```
 
 ```groovy
 dependencies {
-    implementation 'com.codegames.swipereveallayout:swipe-reveal-layout:1.4.2'
+    implementation 'com.github.codegamez:swipereveallayout:1.4.1'
 }
 ```
 
