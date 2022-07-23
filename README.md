@@ -1,5 +1,5 @@
 # SwipeRevealLayout
-A layout that you can swipe/slide to show another layout.
+A layout that you can swipe/slide to show another layout. **dependencies updated**
 
 ### Demo
 ##### Overview
@@ -24,9 +24,18 @@ Drag mode same_level:
 
 ### Usage
 #### Dependencies
+
+```groovy
+repositories {
+    maven {
+         url 'https://dl.bintray.com/codegames/swipe-reveal-layout'
+    }
+}
+```
+
 ```groovy
 dependencies {
-    compile 'com.codegames.swipereveallayout:swipe-reveal-layout:1.4.2'
+    implementation 'com.codegames.swipereveallayout:swipe-reveal-layout:1.4.2'
 }
 ```
 
